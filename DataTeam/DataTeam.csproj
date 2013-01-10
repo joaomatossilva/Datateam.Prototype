@@ -193,6 +193,7 @@
     <Content Include="Views\shared\_UserControl.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Timesheets\Index.cshtml" />
+    <Content Include="Views\Timesheets\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

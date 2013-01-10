@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Timesheets";
+}
+
+<h2>Timesheets</h2>
+
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <span class="brand">Filtro</span>
+            
+            <a class="btn btn-navbar" data-toggle="collapse" data-target="#filterNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            
+            <div id="filterNavBar" class="nav-collapse collapse">
+                <form class=" form-inline navbar-form pull-left">
+                    <ul class="inline">
+                        <li>
+                            <label class="navbar-text" style="min-width: 85px">Semana: </label><input type="date" />
+                        </li>
+                        <li>
+                            <label class="navbar-text" style="min-width: 85px">Estado: </label><select><option>Todos</option></select>        
+                        </li>
+                        <li>
+                            <label class="navbar-text" style="min-width: 85px">Colaborador: </label><select><option>jsilva</option></select>
+                        </li>
+                        <li><button class="btn btn-small">Filtrar</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table visible-desktop">
+    <thead>
+        <tr>
+            <th scope="col">Semana</th>
+            <th scope="col">Colaborador</th>
+            <th scope="col" nowrap="">Data Criação</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Data Estado</th>
+            <th scope="col"><button class="btn"><i class="icon-plus-sign"></i></button>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr class="warning">
+            <td nowrap="" class="bold"><a href="#">2012-12-31</a></td>                       
+            <td class="bold">jsilva</td>
+            <td nowrap="">2012-12-22 14:56</td>
+            <td><i title="Em Construção" class="icon-edit"></i></td>
+            <td nowrap="">2012-12-31 16:06</td>
+            <td nowrap="">
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-ok-sign"></i></button>
+                    <button class="btn"><i class="icon-pencil"></i></button>
+                    <button class="btn"><i class="icon-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td nowrap="" class="bold"><a href="#">2012-12-24</a></td>                       
+            <td class="bold">jsilva</td>
+            <td nowrap="">2012-12-22 14:56</td>
+            <td><i title="Em Aprovação" class="icon-share"></i></td>
+            <td nowrap="">2012-12-31 16:05</td>
+            <td nowrap="">&nbsp;</td>
+        </tr>
+
+        <tr class="error">
+            <td nowrap="" class="bold"><a href="#">2012-12-17</a></td>                       
+            <td class="bold">jsilva</td>
+            <td nowrap="">2012-12-22 14:55</td>
+            <td><i title="Rejeitada" class="icon-warning-sign"></i></td>
+            <td nowrap="">2012-12-26 10:41</td>
+            <td nowrap="">
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-ok-sign"></i></button>
+                    <button class="btn"><i class="icon-pencil"></i></button>
+                    <button class="btn"><i class="icon-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td nowrap="" class="bold"><a href="#">2012-12-10</a></td>                       
+            <td class="bold">jsilva</td>
+            <td nowrap="">2012-12-10 23:53</td>
+            <td><i title="Aprovada" class="icon-thumbs-up"></i></td>
+            <td nowrap="">2012-12-19 11:21</td>
+            <td nowrap="">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td nowrap="" class="bold"><a href="#">2012-12-03</a></td>                       
+            <td class="bold">jsilva</td>
+            <td nowrap="">2012-12-10 23:53</td>
+            <td><i title="Aprovada" class="icon-thumbs-up"></i></td>
+            <td nowrap="">2012-12-19 11:21</td>
+            <td nowrap="">&nbsp;</td>
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="3">45&nbsp;Registos encontrados</td>
+            <td colspan="4">
+                <div class="pagination pull-right">
+                    <ul>
+                        <li><a href="#" class="disabled">Prev</a></li>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<ul class="hidden-desktop unstyled">
+    <li>
+        <div class="well well-small">
+            <i title="Em Construção" class="icon-edit"></i> <a href="#">2012-12-31</a> - jsilva
+            <a class="btn btn-navbar pull-right" data-toggle="collapse" data-target="#t1Actions">
+                <i class="icon-plus"></i>
+            </a>
+            <div id="t1Actions" class="collapse">
+                <hr/>
+                <p>
+                    <span> Data Criação: </span> <span>2012-12-22 14:56</span>
+                </p>
+                <p>
+                    <span> Data Estado: </span> <span>2012-12-22 14:56</span>
+                </p>
+                <div class="btn-group">
+                    <button class="btn"><i class="icon-ok-sign"></i></button>
+                    <button class="btn"><i class="icon-pencil"></i></button>
+                    <button class="btn btn-danger"><i class="icon-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="well well-small">
+            <i title="Em Aprovação" class="icon-share"></i> <a href="#">2012-12-24</a> - jsilva
+        </div>
+    </li>
+    <li>
+        <div class="well well-small">
+            <i title="Rejeitada" class="icon-warning-sign"></i> <a href="#">2012-12-17</a> - jsilva
+        </div>
+    </li>
+
+</ul>
+
+

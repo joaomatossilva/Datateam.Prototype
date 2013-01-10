@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="span8">
+        <div class="well">
+            <h4>Destaques</h4>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <strong>Data Limite Apresentação Despesas</strong>
+                            <p>As despesas do mês anterior devem ser introduzidas e submetidas até ao dia 5 do mês seguinte!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Submeter Informação</strong>
+                            <p>Não esquecer de submeter os items relativos a Despesas, Timesheets e Férias!</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="todos" class="well">
+            <h4>As minhas tarefas</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Criação</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3">Não existem registos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="span4">
+        <div id="missingTimesheets" class="well">
+            <h4>Timesheets em falta</h4>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>2013-01-07</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total: 1</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        
+        <div id="nextVacations" class="well">
+            <h4>Férias proximos 30 dias</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Colaborador</th>
+                        <th>Inicio</th>
+                        <th>Fim</th>
+                        <th>Dias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>bcustodio</td>
+                        <td>2013-01-09</td>
+                        <td>2013-01-11</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div id="nextBirthdays" class="well">
+            <h4>Aniversários próximos 30 dias</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Colaborador</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Não existem registos</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

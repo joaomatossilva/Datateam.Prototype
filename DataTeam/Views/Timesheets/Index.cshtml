@@ -43,7 +43,7 @@
             <th scope="col" nowrap="">Data Criação</th>
             <th scope="col">Estado</th>
             <th scope="col">Data Estado</th>
-            <th scope="col"><button class="btn"><i class="icon-plus-sign"></i></button>
+            <th scope="col"><button class="btn" onclick="window.location.href = '@Url.Action("Create")'"><i class="icon-plus-sign"></i></button>
             </th>
         </tr>
     </thead>
@@ -51,7 +51,7 @@
     <tbody>
 
         <tr class="warning">
-            <td nowrap="" class="bold"><a href="@Url.Action("Create")">2012-12-31</a></td>                       
+            <td nowrap="" class="bold"><a href="@Url.Action("Create")">2012-12-31</a></td>
             <td class="bold">jsilva</td>
             <td nowrap="">2012-12-22 14:56</td>
             <td><i title="Em Construção" class="icon-edit"></i></td>

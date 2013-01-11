@@ -20,7 +20,8 @@ namespace BootstrapSupport
                 "~/Content/bootstrap.css"
                 ));
             bundles.Add(new StyleBundle("~/content/css-responsive").Include(
-                "~/Content/bootstrap-responsive.css"
+                "~/Content/bootstrap-responsive.css",
+                "~/Content/bootstrap-hack.css"
                 ));
         }
     }

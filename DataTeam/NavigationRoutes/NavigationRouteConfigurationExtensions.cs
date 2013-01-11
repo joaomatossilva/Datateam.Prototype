@@ -56,6 +56,15 @@ namespace NavigationRoutes
             return new NavigationRouteBuilder(routes, newRoute);
         }
 
+        public static NavigationRouteBuilder MapNavigationRoute<T>(this RouteCollection routes, string displayName, Expression<Func<T, ActionResult>> action, string name) where T : IController
+        {
+            var newRoute = new NamedRoute(name, "", new MvcRouteHandler());
+            newRoute.ToDefaultAction(action);
+            newRoute.DisplayName = displayName;
+            routes.Add(newRoute.Name, newRoute);
+            return new NavigationRouteBuilder(routes, newRoute);
+        }
+
         public static NavigationRouteBuilder AddChildRoute<T>(this NavigationRouteBuilder builder, string DisplayText, Expression<Func<T, ActionResult>> action) where T : IController
         {
             var childRoute = new NamedRoute("", "", new MvcRouteHandler());
@@ -64,6 +73,17 @@ namespace NavigationRoutes
             childRoute.IsChild = true;
             builder._parent.Children.Add(childRoute);
             builder._routes.Add(childRoute.Name,childRoute);
+            return builder;
+        }
+
+        public static NavigationRouteBuilder AddChildRoute<T>(this NavigationRouteBuilder builder, string DisplayText, Expression<Func<T, ActionResult>> action, string name) where T : IController
+        {
+            var childRoute = new NamedRoute(name, "", new MvcRouteHandler());
+            childRoute.ToDefaultAction<T>(action);
+            childRoute.DisplayName = DisplayText;
+            childRoute.IsChild = true;
+            builder._parent.Children.Add(childRoute);
+            builder._routes.Add(childRoute.Name, childRoute);
             return builder;
         }
 
@@ -107,7 +127,10 @@ namespace NavigationRoutes
             route.Defaults.Add("action", actionName);
 
             route.Url= CreateUrl(actionName,controllerName);
-            route.Name = "Navigation-" + controllerName + "-" + actionName;
+            if (string.IsNullOrEmpty(route.Name))
+            {
+                route.Name = "Navigation-" + controllerName + "-" + actionName;                
+            }
 
             if(route.DataTokens == null)
                 route.DataTokens = new RouteValueDictionary();

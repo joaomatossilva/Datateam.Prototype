@@ -37,8 +37,13 @@ namespace BootstrapMvcSample.Controllers
         [HttpPost]
         public ActionResult SignIn(FormCollection collection)
         {
-            FormsAuthentication.SetAuthCookie(collection["email"], true);
-            return RedirectToAction("Index", "Home");
+            if (collection["email"].Equals("dtcdemo"))
+            {
+                FormsAuthentication.SetAuthCookie(collection["email"], true);
+                return RedirectToAction("Index", "Home");
+                
+            }
+            return View();
         }
 
         public ActionResult StickyFooter()

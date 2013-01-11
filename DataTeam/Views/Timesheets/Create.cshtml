@@ -2,7 +2,8 @@
     ViewBag.Title = "Timesheet";
 }
 
-<h2>Timesheet 2013-01-07</h2>
+<h2>Timesheet</h2>
+<h4>2013-01-07</h4>
 
 <table class="table">
     <thead>
@@ -100,6 +101,7 @@
             <td colspan="7">
                 <button class="btn btn-primary">Actualizar</button>
                 <button class="btn">Limpar</button>
+                <button class="btn" onclick="window.location.href = '@Url.Action("Index")'">Voltar</button>
             </td>
         </tr>
     </tfoot>

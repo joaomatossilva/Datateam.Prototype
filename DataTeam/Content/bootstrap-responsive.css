@@ -65,27 +65,9 @@
   display: inherit !important;
 }
 
-td.visible-desktop, th.visible-desktop {
-  display: table-cell !important;
-}
-
-tr.visible-desktop {
-  display: table-row !important;
-}
-
-
 @media (min-width: 768px) and (max-width: 979px) {
   .hidden-desktop {
     display: inherit !important;
-  }
-  tr.hidden-desktop {
-      display: table-row !important;
-  }
-  td.hidden-desktop, th.hidden-desktop {
-      display: table-cell !important;
-  }
-  td.visible-desktop, th.visible-desktop {
-    display: none !important ;
   }
   .visible-desktop {
     display: none !important ;
@@ -101,15 +83,6 @@ tr.visible-desktop {
 @media (max-width: 767px) {
   .hidden-desktop {
     display: inherit !important;
-  }
-  tr.hidden-desktop {
-      display: table-row !important;
-  }
-  .visible-desktop {
-    display: none !important;
-  }
-  td.visible-desktop, th.visible-desktop {
-    display: none !important ;
   }
   .visible-desktop {
     display: none !important ;

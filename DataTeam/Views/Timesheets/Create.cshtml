@@ -24,11 +24,11 @@
         <tr>
             <td class="visible-desktop">BIC-AML</td>
             <td class="visible-desktop">Manutenção Aplicacional</td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="0" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="1" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="2" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="3" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="4" value="0" /></td>
         </tr>
         <tr class="hidden-desktop">
             <td colspan="7">COLLAB-OUT - Análise e Desenvolvimento Aplicacional</td>
@@ -36,11 +36,11 @@
         <tr>
             <td class="visible-desktop">BIC-AML</td>
             <td class="visible-desktop">Manutenção Aplicacional</td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="0" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="1" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="2" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="3" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="4" value="0" /></td>
         </tr>
         <tr class="hidden-desktop">
             <td colspan="7">Interno - Formação</td>
@@ -48,11 +48,11 @@
         <tr>
             <td class="visible-desktop">BIC-AML</td>
             <td class="visible-desktop">Manutenção Aplicacional</td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="0" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="1" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="2" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="3" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="4" value="0" /></td>
         </tr>
         <tr class="hidden-desktop">
             <td colspan="7">Interno - Feriado</td>
@@ -60,11 +60,11 @@
         <tr>
             <td class="visible-desktop">BIC-AML</td>
             <td class="visible-desktop">Manutenção Aplicacional</td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="0" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="1" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="2" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="3" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="4" value="0" /></td>
         </tr>
         <tr class="hidden-desktop">
             <td colspan="7">Interno - Ausência</td>
@@ -72,11 +72,11 @@
         <tr>
             <td class="visible-desktop">BIC-AML</td>
             <td class="visible-desktop">Manutenção Aplicacional</td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
-            <td><input type="text" class="span1"/></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="0" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="1" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="2" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="3" value="0" /></td>
+            <td><input type="tel" class="span1 timeEntry" data-dayIndex="4" value="0" /></td>
         </tr>
     </tbody>
     <tfoot>
@@ -106,3 +106,28 @@
         </tr>
     </tfoot>
 </table>
+
+
+@section Scripts
+{
+    
+    <script type="text/javascript">
+
+        $(function() {
+            $(".timeEntry").focus(function() {
+                var dayIndex = $(this).attr("data-dayIndex");
+                var dayTotal = 0;
+                $("[data-dayIndex=\"" + dayIndex + "\"]").each(function (index, item) {
+                    dayTotal += parseInt($(item).val());
+                });
+                console.log(dayTotal);
+                if (dayTotal < 8) {
+                    $(this).val(8 - dayTotal);
+                }
+                this.select();
+            });
+        });
+
+    </script>
+
+}
